@@ -176,7 +176,7 @@ sb.pairplot(spec, hue='vaccines', height=3)
 ```
 
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot3.png" width="500" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot3.png" width="600" title="hover text" >
 </p> 
 
 
@@ -250,7 +250,7 @@ fig.suptitle('Field "{}"'.format(field));
 ```
 
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot4.png" width="350" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot4.png" width="600" title="hover text" >
 </p> 
 
 <h5>Let's do the same to the dailyCountPerMillion field</h5>
@@ -268,7 +268,7 @@ ax_after.set(title='After log transformation', ylabel='frequency', xlabel='value
 fig.suptitle('Field "{}"'.format(field));
 ```
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot5.png" width="350" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot5.png" width="600" title="hover text" >
 </p> 
 
 
@@ -282,7 +282,7 @@ spec_main
 ```
 
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab5.jpg" width="350" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab5.jpg" width="1000" height="350" title="hover text" >
 </p> 
 
 <h4>Hypothesis : The mean value of the mean daily vaccination count of India during the month of  March is as same as the month of April</h4>
