@@ -168,7 +168,7 @@ ax.set(xlabel='Country',
 ```  
 
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot2.png" width="350" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot2.png" width="500" title="hover text" >
 </p> 
       
 ```python
@@ -176,7 +176,7 @@ sb.pairplot(spec, hue='vaccines', height=3)
 ```
 
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot3.png" width="350" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot3.png" width="500" title="hover text" >
 </p> 
 
 
