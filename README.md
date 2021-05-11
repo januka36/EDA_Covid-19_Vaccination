@@ -1,8 +1,6 @@
-# EDA_Machine_Learning
-
-Covid-19 Vaccination World – EDA
-About the Data Set
-The data set is about the vaccination details of the current Covid-19 pandemic all over the world. 
+# Covid-19 Vaccination World – EDA
+<h1>About the Data Set</h1>
+<h5>The data set is about the vaccination details of the current Covid-19 pandemic all over the world.</h5>
 
 The atttributes in the data set include the daily count of vaccinations as well as the percentage from the beginning of the year 2021 (January 1st). It also includes the type of vaccine used by each country and that will be really useful to analyse and visualize to have a good idea about the vaccines recommonded most. Some of the other attributes are the dates and sourcee of each feature. Here in this project I cleaned the data for the exploratory data analysis of my dataset and then visualized them to highlight some general features of the data set.
 
@@ -15,6 +13,16 @@ Key Features to be used
 - Visualizing in an useful manner
 - Hypothesis testing
 - Next moves
+
+```python 
+sb.countplot(data = flights, x= 'Source')
+plt.ylabel('Number of flights',fontsize=12)
+plt.xlabel('Source',fontsize=12)
+```
+
+<p align="left">
+ <img src="https://github.com/januka36/dataviz-flights/blob/main/Screenshots/bar1.png" width="350" title="hover text" >
+</p> 
 
 Exploring the data
 
