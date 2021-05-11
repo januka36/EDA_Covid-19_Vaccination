@@ -128,7 +128,7 @@ ax = sb.lineplot(data=df, palette="viridis")
 ax.set(xlabel='Country', ylabel='Daily Vaccination')
 ```
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot1.png" width="350" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot1.png" width="500" title="hover text" >
 </p> 
 
 <h5>Let's visualize the vaccines used by above mentioned countries.</h5>
