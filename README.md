@@ -1,5 +1,5 @@
 # Covid-19 Vaccination World – EDA
-<h1>About the Data Set</h1>
+<h2>About the Data Set</h2>
 <h5>The data set is about the vaccination details of the current Covid-19 pandemic all over the world.</br>
 
 The atttributes in the data set include the daily count of vaccinations as well as the percentage from the beginning of the year 2021 (January 1st). It also includes the type of vaccine used by each country and that will be really useful to analyse and visualize to have a good idea about the vaccines recommonded most. Some of the other attributes are the dates and sourcee of each feature. Here in this project I cleaned the data for the exploratory data analysis of my dataset and then visualized them to highlight some general features of the data set.</br>
@@ -20,32 +20,32 @@ plt.ylabel('Number of flights',fontsize=12)
 plt.xlabel('Source',fontsize=12)
 ```
 
-<p align="left">
- <img src="https://github.com/januka36/dataviz-flights/blob/main/Screenshots/bar1.png" width="350" title="hover text" >
-</p> 
-
 <h2>Exploring the data</h2>
 
+```python 
 import numpy as np
 import pandas as pd
 import seaborn as sb
 from scipy import stats
 import matplotlib.pyplot as plt
+```
 
+```python 
 %matplotlib inline
 vd = pd.read_csv("country_vaccinations.csv")
+```
 
 Let's navigate to the top five rows of the dataframe.
 vd.head()
 Here we have to select the columns we need for the analysis. The unuseful columns should be dropped from the DataFrame. So Let us drop these columns in order to clean our dataset. Below mentioned data is only sufficient for our analysis.
 
-#### 1. iso_code
-#### 2. date
-#### 3. total_vaccinations
-#### 4. daily_vaccinations
-#### 5. total_vaccinations_per_hundred
-#### 6. daily_vaccinations_per_million
-#### 7. Vaccines
+1. iso_code
+2. date
+3. total_vaccinations
+4. daily_vaccinations
+5. total_vaccinations_per_hundred
+6. daily_vaccinations_per_million
+7. Vaccines
 
 #### Since the data lies between the beginning of the year 2021 till now (10th May 2021), we can rename the data in the attribute 'date' as follows.
 
