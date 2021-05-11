@@ -42,10 +42,10 @@ vd.head()
 ```
 
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot1.png" width="350" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab1.jpg" width="350" title="hover text" >
 </p> 
 
-Here we have to select the columns we need for the analysis. The unuseful columns should be dropped from the DataFrame. So Let us drop these columns in order to clean our dataset. Below mentioned data is only sufficient for our analysis.
+<h5>Here we have to select the columns we need for the analysis. The unuseful columns should be dropped from the DataFrame. So Let us drop these columns in order to clean our dataset. Below mentioned data is only sufficient for our analysis.</h5>
 
 1. iso_code
 2. date
@@ -55,17 +55,28 @@ Here we have to select the columns we need for the analysis. The unuseful column
 6. daily_vaccinations_per_million
 7. Vaccines
 
-#### Since the data lies between the beginning of the year 2021 till now (10th May 2021), we can rename the data in the attribute 'date' as follows.
+<h5>We can rename the data in the attribute 'date' as follows.</h5>
 
+```python 
 vd['date'] = vd.date.str.replace('2021-', '')
 vd['date'] = vd.date.str.replace('2020-', '')
 vd.head()
+```
+<p align="left">
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab2.jpg" width="350" title="hover text" >
+</p> 
 
+```python 
 vd = vd.rename(columns={'iso_code' : 'countryCode', 'total_vaccinations' : 'totalCount', 'daily_vaccinations' : 'dailyCount',
                        'total_vaccinations_per_hundred' : 'totalPercentage', 'daily_vaccinations_per_million' : 'dailyCountPerMillion'})
 vd.head()
+vd.head()
+```
+<p align="left">
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab3.jpg" width="350" title="hover text" >
+</p> 
 
-Now let's have a description about the data set
+<h5>Now let's have a description about the data set</h5>
 
 print('Number of rows: ' + str(vd.shape[0]))
 print('Column names: ' + str(vd.columns.tolist()))
