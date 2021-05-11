@@ -63,7 +63,7 @@ vd['date'] = vd.date.str.replace('2020-', '')
 vd.head()
 ```
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab2.jpg" width="550" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab2.jpg" width="1000" height="350" title="hover text" >
 </p> 
 
 ```python 
@@ -72,7 +72,7 @@ vd = vd.rename(columns={'iso_code' : 'countryCode', 'total_vaccinations' : 'tota
 vd.head()
 ```
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab3.jpg" width="350" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab3.jpg" width="1000" height="350" title="hover text" >
 </p> 
 
 <h5>Now let's have a description about the data set</h5>
@@ -115,7 +115,7 @@ vd.head()
 ```
 
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab4.jpg" width="350" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab4.jpg" width="1000" height="350" title="hover text" >
 </p> 
 
 <h5>Below is the grapgh of the mean, min and max of daily vaccination count of some specified countries</h5>
