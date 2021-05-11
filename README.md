@@ -42,7 +42,7 @@ vd.head()
 ```
 
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab1.jpg" width="350" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab1.jpg" width="700" height="400" title="hover text" >
 </p> 
 
 <h5>Here we have to select the columns we need for the analysis. The unuseful columns should be dropped from the DataFrame. So Let us drop these columns in order to clean our dataset. Below mentioned data is only sufficient for our analysis.</h5>
