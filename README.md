@@ -1,12 +1,12 @@
 # Covid-19 Vaccination World – EDA
 <h1>About the Data Set</h1>
-<h5>The data set is about the vaccination details of the current Covid-19 pandemic all over the world.</h5>
+<h5>The data set is about the vaccination details of the current Covid-19 pandemic all over the world.</br>
 
-The atttributes in the data set include the daily count of vaccinations as well as the percentage from the beginning of the year 2021 (January 1st). It also includes the type of vaccine used by each country and that will be really useful to analyse and visualize to have a good idea about the vaccines recommonded most. Some of the other attributes are the dates and sourcee of each feature. Here in this project I cleaned the data for the exploratory data analysis of my dataset and then visualized them to highlight some general features of the data set.
+The atttributes in the data set include the daily count of vaccinations as well as the percentage from the beginning of the year 2021 (January 1st). It also includes the type of vaccine used by each country and that will be really useful to analyse and visualize to have a good idea about the vaccines recommonded most. Some of the other attributes are the dates and sourcee of each feature. Here in this project I cleaned the data for the exploratory data analysis of my dataset and then visualized them to highlight some general features of the data set.</br>
 
-The data set for this project was collected from [kaggle](https://www.kaggle.com/datasets).
-Initial Plan for the Exploration
-Key Features to be used
+The data set for this project was collected from [kaggle](https://www.kaggle.com/datasets).</br>
+Initial Plan for the Exploration</br>
+Key Features to be used</h5>
 
 - Data cleaning and feature engineering
 - Key findings and insights
@@ -24,7 +24,7 @@ plt.xlabel('Source',fontsize=12)
  <img src="https://github.com/januka36/dataviz-flights/blob/main/Screenshots/bar1.png" width="350" title="hover text" >
 </p> 
 
-Exploring the data
+<h2>Exploring the data</h2>
 
 import numpy as np
 import pandas as pd
