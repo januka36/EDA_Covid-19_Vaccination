@@ -108,24 +108,40 @@ dtype: int64
 In [116]:
 ```
 
+```python
 sufficient_fields = ['countryCode','date', 'dailyCount', 'dailyCountPerMillion', 'vaccines']
 vd = vd[sufficient_fields]
 vd.head()
+```
 
-### Below is the grapgh of the mean, min and max of daily vaccination count of some specified countries
+<p align="left">
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab4.jpg" width="350" title="hover text" >
+</p> 
+
+<h5>Below is the grapgh of the mean, min and max of daily vaccination count of some specified countries</h5>
+
+```python
 spec = vd[(vd['countryCode'] == 'ITA') | (vd['countryCode'] == 'USA') | (vd['countryCode'] == 'IND') | (vd['countryCode'] == 'CHN') | (vd['countryCode'] == 'RUS') 
          | (vd['countryCode'] == 'UK') | (vd['countryCode'] == 'AUS') | (vd['countryCode'] == 'CAN')]
 df = spec.groupby('countryCode')['dailyCount'].agg(['mean', 'min', 'max'])
 ax = sb.lineplot(data=df, palette="viridis")
 ax.set(xlabel='Country', ylabel='Daily Vaccination')
-### Let's visualize the vaccines used by above mentioned countries.
+```
+<p align="left">
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot1.png" width="350" title="hover text" >
+</p> 
+
+<h5>Let's visualize the vaccines used by above mentioned countries.</h5>
+
+```python
 lst_col = 'vaccines' 
 x = vd.assign(**{lst_col:vd[lst_col].str.split(', ')})    
 vd2 = pd.DataFrame({col:np.repeat(x[col].values, x[lst_col].str.len())
             for col in x.columns.difference([lst_col])}).assign(**{lst_col:np.concatenate(x[lst_col].values)})[x.columns.tolist()]
 
 vd2.vaccines.value_counts()
-
+```
+```
 Oxford/AstraZeneca    11702
 Pfizer/BioNTech        9907
 Moderna                4903
@@ -138,7 +154,9 @@ CanSino                 226
 EpiVacCorona            143
 Covaxin                 112
 Name: vaccines, dtype: int64
+```
 
+```python
 spec = vd2[(vd2['countryCode'] == 'ITA') | (vd2['countryCode'] == 'USA') | 
            (vd2['countryCode'] == 'IND') | (vd2['countryCode'] == 'CHN') | (vd2['countryCode'] == 'RUS') 
          | (vd2['countryCode'] == 'UK') | (vd2['countryCode'] == 'AUS') | (vd2['countryCode'] == 'CAN')]
@@ -147,12 +165,27 @@ ax.scatter(spec.countryCode, spec.vaccines)
 ax.set(xlabel='Country',
       ylabel='Vaccine',
       title='Vaccines used by countries');
+```  
 
+<p align="left">
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot2.png" width="350" title="hover text" >
+</p> 
+      
+```python
 sb.pairplot(spec, hue='vaccines', height=3)
+```
 
-## Feature Engineering
+<p align="left">
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot3.png" width="350" title="hover text" >
+</p> 
 
+
+<h2>Feature Engineering</h2>
+
+```python
 vd.info()
+```
+```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 15666 entries, 0 to 15665
 Data columns (total 5 columns):
@@ -165,28 +198,46 @@ Data columns (total 5 columns):
  4   vaccines              15666 non-null  object 
 dtypes: float64(2), object(3)
 memory usage: 612.1+ KB
+```
 
-#### It shows that our data set has only two missing values. So there is no need of dropping any column.
+<h5>It shows that our data set has only two missing values. So there is no need of dropping any column.</h5>
+
+```python
 num_cols = vd.select_dtypes('number').columns
 num_cols
-Index(['dailyCount', 'dailyCountPerMillion'], dtype='object')
+```
 
+```
+Index(['dailyCount', 'dailyCountPerMillion'], dtype='object')
+```
+
+```python
 skew_limit = 0.75
 skew_vals = vd[num_cols].skew()
 skew_vals
+```
+
+```
 dailyCount              9.954500
 dailyCountPerMillion    7.729351
 dtype: float64
-
+```
+```python
 skew_cols = skew_vals[abs(skew_vals > skew_limit)].sort_values(ascending=False)
 skew_cols
+```
 
+```
 dailyCount              9.954500
 dailyCountPerMillion    7.729351
 dtype: float64
+```
 
-### Applying logarithmic transformation
-#### Let's select most skewed field, 'dailyCount'
+<h4>Applying logarithmic transformation</h4>
+
+<h3>Let's select most skewed field, 'dailyCount'</h3>
+
+```python
 field = "dailyCount"
 
 fig, (ax_before,ax_after) = plt.subplots(1,2,figsize=(10,5))
@@ -196,7 +247,15 @@ vd[field].apply(np.log1p).hist(ax=ax_after)
 ax_before.set(title='Before log transformation', ylabel='frequency', xlabel='value')
 ax_after.set(title='After log transformation', ylabel='frequency', xlabel='value')
 fig.suptitle('Field "{}"'.format(field));
-#### Let's do the same to the dailyCountPerMillion field
+```
+
+<p align="left">
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot4.png" width="350" title="hover text" >
+</p> 
+
+<h5>Let's do the same to the dailyCountPerMillion field</h5>
+
+```python
 %config InlineBackend.figure_formats = ['retina']
 field = "dailyCountPerMillion"
 
@@ -207,21 +266,33 @@ vd[field].apply(np.log1p).hist(ax=ax_after)
 ax_before.set(title='Before log transformation', ylabel='frequency', xlabel='value')
 ax_after.set(title='After log transformation', ylabel='frequency', xlabel='value')
 fig.suptitle('Field "{}"'.format(field));
+```
+<p align="left">
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot5.png" width="350" title="hover text" >
+</p> 
 
-## Hypothesis Testing
 
-### Let's take the vaccination details from 11/04 to 20/4 and 21/04 to 30/04
+<h2>Hypothesis Testing</h2>
+
+<h5>Let's take the vaccination details from 11/04 to 20/4 and 21/04 to 30/04</h5>
+
+```python
 spec_main = vd[(vd['countryCode'] == 'IND')]
 spec_main
+```
 
-### Hypothesis : The mean value of the mean daily vaccination count of India during the month of  March is as same as the month of April
+<p align="left">
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab5.jpg" width="350" title="hover text" >
+</p> 
 
-### Alternative Hypothesis: There is no relationship between number of vaccinations done in given In two months
+<h4>Hypothesis : The mean value of the mean daily vaccination count of India during the month of  March is as same as the month of April</h4>
 
-## Results
+<h4>Alternative Hypothesis: There is no relationship between number of vaccinations done in given In two months</h4>
 
-#### As the number of covid patients increasing and decreasing time by time, the number of vaccinations can be seen as not connected to each other.
+<h2>Results</h2>
 
-## Next Moves
+<h5>As the number of covid patients increasing and decreasing time by time, the number of vaccinations can be seen as not connected to each other.</h5>
 
-After the EDA part, we can either analyse the data further or we can use the data set for future ML model to do a prediction that how many vaccines must be consunmed by each country in future or to predict which of the above vaccines going to be used much or less etc.
+<h2>Next Moves</h2>
+
+<h5>After the EDA part, we can either analyse the data further or we can use the data set for future ML model to do a prediction that how many vaccines must be consunmed by each country in future or to predict which of the above vaccines going to be used much or less etc.</h5>
