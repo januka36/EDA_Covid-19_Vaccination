@@ -42,7 +42,7 @@ vd.head()
 ```
 
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab1.jpg" width="550" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab1.jpg" width="350" title="hover text" >
 </p> 
 
 <h5>Here we have to select the columns we need for the analysis. The unuseful columns should be dropped from the DataFrame. So Let us drop these columns in order to clean our dataset. Below mentioned data is only sufficient for our analysis.</h5>
@@ -70,7 +70,6 @@ vd.head()
 vd = vd.rename(columns={'iso_code' : 'countryCode', 'total_vaccinations' : 'totalCount', 'daily_vaccinations' : 'dailyCount',
                        'total_vaccinations_per_hundred' : 'totalPercentage', 'daily_vaccinations_per_million' : 'dailyCountPerMillion'})
 vd.head()
-vd.head()
 ```
 <p align="left">
  <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab3.jpg" width="350" title="hover text" >
@@ -78,11 +77,14 @@ vd.head()
 
 <h5>Now let's have a description about the data set</h5>
 
+```python 
 print('Number of rows: ' + str(vd.shape[0]))
 print('Column names: ' + str(vd.columns.tolist()))
 print('Number of countries: ' + str(len(vd['countryCode'].unique())))
 print('Number of missing values: \n' + str(vd.isnull().sum()))
+```
 
+```
 Number of rows: 15666
 Column names: ['country', 'countryCode', 'date', 'totalCount', 'people_vaccinated', 'people_fully_vaccinated', 'daily_vaccinations_raw', 'dailyCount', 'totalPercentage', 'people_vaccinated_per_hundred', 'people_fully_vaccinated_per_hundred', 'dailyCountPerMillion', 'vaccines', 'source_name', 'source_website']
 Number of countries: 196
@@ -104,6 +106,7 @@ source_name                               0
 source_website                            0
 dtype: int64
 In [116]:
+```
 
 sufficient_fields = ['countryCode','date', 'dailyCount', 'dailyCountPerMillion', 'vaccines']
 vd = vd[sufficient_fields]
