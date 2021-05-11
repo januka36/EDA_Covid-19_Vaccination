@@ -35,8 +35,16 @@ import matplotlib.pyplot as plt
 vd = pd.read_csv("country_vaccinations.csv")
 ```
 
-Let's navigate to the top five rows of the dataframe.
+<h5>Let's navigate to the top five rows of the dataframe.</h5>
+
+```python 
 vd.head()
+```
+
+<p align="left">
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot1.png" width="350" title="hover text" >
+</p> 
+
 Here we have to select the columns we need for the analysis. The unuseful columns should be dropped from the DataFrame. So Let us drop these columns in order to clean our dataset. Below mentioned data is only sufficient for our analysis.
 
 1. iso_code
