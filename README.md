@@ -42,7 +42,7 @@ vd.head()
 ```
 
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab1.jpg" width="1000" height="350" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab1.jpg" width="1000" height="250" title="hover text" >
 </p> 
 
 <h5>Here we have to select the columns we need for the analysis. The unuseful columns should be dropped from the DataFrame. So Let us drop these columns in order to clean our dataset. Below mentioned data is only sufficient for our analysis.</h5>
@@ -63,7 +63,7 @@ vd['date'] = vd.date.str.replace('2020-', '')
 vd.head()
 ```
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab2.jpg" width="1000" height="350" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab2.jpg" width="1000" height="250" title="hover text" >
 </p> 
 
 ```python 
@@ -72,7 +72,7 @@ vd = vd.rename(columns={'iso_code' : 'countryCode', 'total_vaccinations' : 'tota
 vd.head()
 ```
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab3.jpg" width="1000" height="350" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab3.jpg" width="1000" height="250" title="hover text" >
 </p> 
 
 <h5>Now let's have a description about the data set</h5>
@@ -115,7 +115,7 @@ vd.head()
 ```
 
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab4.jpg" width="1000" height="350" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab4.jpg" width="1000" height="250" title="hover text" >
 </p> 
 
 <h5>Below is the grapgh of the mean, min and max of daily vaccination count of some specified countries</h5>
@@ -176,7 +176,7 @@ sb.pairplot(spec, hue='vaccines', height=3)
 ```
 
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot3.png" width="600" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot3.png" title="hover text" >
 </p> 
 
 
@@ -250,7 +250,7 @@ fig.suptitle('Field "{}"'.format(field));
 ```
 
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot4.png" width="600" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot4.png" title="hover text" >
 </p> 
 
 <h5>Let's do the same to the dailyCountPerMillion field</h5>
@@ -268,7 +268,7 @@ ax_after.set(title='After log transformation', ylabel='frequency', xlabel='value
 fig.suptitle('Field "{}"'.format(field));
 ```
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot5.png" width="600" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/plot5.png" title="hover text" >
 </p> 
 
 
@@ -282,7 +282,7 @@ spec_main
 ```
 
 <p align="left">
- <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab5.jpg" width="1000" height="350" title="hover text" >
+ <img src="https://github.com/januka36/EDA_Covid-19_Vaccination/blob/main/Images/tab5.jpg" width="1000" height="250" title="hover text" >
 </p> 
 
 <h4>Hypothesis : The mean value of the mean daily vaccination count of India during the month of  March is as same as the month of April</h4>
